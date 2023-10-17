@@ -1,8 +1,0 @@
-pyproject.toml
-setup.py
-aminfo.egg-info/PKG-INFO
-aminfo.egg-info/SOURCES.txt
-aminfo.egg-info/dependency_links.txt
-aminfo.egg-info/not-zip-safe
-aminfo.egg-info/top_level.txt
-src/aminfo.cpp
