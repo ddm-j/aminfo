@@ -69,6 +69,10 @@ As expected, the estimator's accuracy falls apart for low values of $N$ (right s
 
 I am a bit of a novice at C++, so this code could enjoy some further optimizations. In the following chart, I plot the performance speedup over `sklearn`'s `mutual_information_regression` which is based on a KNN estimator of the joint density. 
 
+![Performance](img/performance.png)
+
+The baseline performance increase is around 10x for small datasets, and increases as high as 20x for datasets near 100k. This benchmark is performed for joint gaussian with correlation 0.9, and `n_neighbors=3` for the `mutual_info_regression` estimator.
+
 ## Further Work
 
 Should time or necessity call for it, I may implement both a Parzen window approach to the joint density estimation, and the Copula entropy (no parameter estimator) algorithms for continuous mutual information. However, I will likely only do this if I find some issue during my work with the Adaptive Partitioning method.
