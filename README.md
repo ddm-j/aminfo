@@ -71,7 +71,7 @@ I am a bit of a novice at C++, so this code could enjoy some further optimizatio
 
 ![Performance](img/performance.png)
 
-The baseline performance increase is around 10x for small datasets, and increases as high as 20x for datasets near 100k. This benchmark is performed for joint gaussian with correlation 0.9, and `n_neighbors=3` for the `mutual_info_regression` estimator.
+The baseline performance increase is around 10x for small datasets, and increases as high as 20x for datasets near 100k. This benchmark is performed for joint gaussian with correlation 0.9, and `n_neighbors=3` for the `mutual_info_regression` estimator. It should also be noted that this joint gaussain (0.9 correlation) represents an upper bound on the speed of this algorithm. The recursion depth in the algorithm depends on the relationship between the variables, so at lower relationships (correlation 0.0-0.3), the speed will be much faster.
 
 ## Further Work
 
