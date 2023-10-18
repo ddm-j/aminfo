@@ -52,7 +52,7 @@ Typical values to try for `chi` are in the range of 4.0-8.0 for most distributio
 I cannot speak to the "general" accuracy of the Adaptive Partitioning algorithm. I wrote this implementation in order to replace the use of `sklearn`'s estimator `mutual_information_regression` which is based on `scipy`'s KNN algorithm and is quite slow. Regardless, we can test the accuracy of the Adaptive partitioning esimator against a known analytical mutual information. For two standard normal gaussians that have some correlation $\rho$:
 
 $$
-X, Y = N(0, 1)
+X, Y = N(0, 1) \linebreak
 I(X, Y) = -\frac{1}{2}log(1-\rho^2)
 $$
 
@@ -60,15 +60,15 @@ We can plot the difference between the estimator and the actual value for variou
 
 ![Sample Image](img/sample_image.png)
 
-## Usage
+As expected, the estimator's accuracy falls apart for low values of $$N$$ (right side of graph). But enjoys good performance at higher counts. Additionally, we can see that the estimator is more accurate for lower correlations across a wide range of $$N$$.
 
-Here's how you can use this package:
+## Performance
 
-```python
-import your_package
+I am a bit of a novice at C++, so this code could enjoy some further optimizations. In the following chart, I plot the performance speedup over `sklearn`'s `mutual_information_regression` which is based on a KNN estimator of the joint density. 
 
-# Your code here
-```
+## Further Work
+
+Should time or necessity call for it, I may implement both a Parzen window approach to the joint density estimation, and the Copula entropy (no parameter estimator) algorithms for continuous mutual information. However, I will likely only do this if I find some issue during my work with the Adaptive Partitioning method.
 
 ## License
 
@@ -76,5 +76,6 @@ MIT License
 
 ## Acknowledgments
 
-- Acknowledgment 1
-- Acknowledgment 2
+- [1] [Darbellay, Estimation of the information by an adaptive partitioning of the observation space](https://ieeexplore.ieee.org/document/761290)
+- [2] [Assessing and Improving Classification and Prediction, Timothy Masters](http://www.timothymasters.info/my-technical-books.html)
+- [3] Some inspiration from this implementation: [minfo](https://github.com/NeoNeuron/minfo)
