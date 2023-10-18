@@ -35,15 +35,15 @@ MI = adaptive_mutual_information(X, Y, 8.0)
 ### Adaptive Partitioning
 The adaptive partitioning algorithm is an improvement on the "histogram" method of calculating mutual information. In this method, the bin sizes are driven by the information latent in distribution. The algorithm works by recursively partitioning the distribution in a fashion very similar to quadtree traversal. Each "child" is tested for distribution uniformity through a Chi-squared test:
 
-\[
+$$
 \chi^2 = \sum_{i=0}^{3} \frac{ \left( \left| n_i - e_i \right| - 0.5 \right)^2}{e_i}
-\]
+$$
 
 The child cell can split into grandchildren if the statistic exceeds some critical value:
 
-\[
+$$
 \chi^2 > \chi^2_c
-\]
+$$
 
 Typical values to try for `chi` are in the range of 4.0-8.0 for most distributions. A higher `chi` will make it harder to split each child and find more relationship between the variables, thereby having a tendency to underestimate the true MI. A lower `chi` will make it easier to split each child cell and may find more information than is really there, causing a tendency to overestimate the true MI. 
 
