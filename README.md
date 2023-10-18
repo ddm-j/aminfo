@@ -50,10 +50,12 @@ Typical values to try for `chi` are in the range of 4.0-8.0 for most distributio
 ## Accuracy
 
 I cannot speak to the "general" accuracy of the Adaptive Partitioning algorithm. I wrote this implementation in order to replace the use of `sklearn`'s estimator `mutual_information_regression` which is based on `scipy`'s KNN algorithm and is quite slow. Regardless, we can test the accuracy of the Adaptive partitioning esimator against a known analytical mutual information. For two standard normal gaussians that have some correlation $\rho$:
+
 $$
 X, Y = N(0, 1)
 I(X, Y) = -\frac{1}{2}log(1-\rho^2)
 $$
+
 We can plot the difference between the estimator and the actual value for various correlations and number of datapoints, $N$.
 
 ![Sample Image](img/sample_image.png)
