@@ -53,6 +53,8 @@ I cannot speak to the "general" accuracy of the Adaptive Partitioning algorithm.
 
 $$
 X, Y = N(0, 1) \linebreak
+$$
+$$
 I(X, Y) = -\frac{1}{2}log(1-\rho^2)
 $$
 
@@ -60,7 +62,7 @@ We can plot the difference between the estimator and the actual value for variou
 
 ![Sample Image](img/sample_image.png)
 
-As expected, the estimator's accuracy falls apart for low values of $$N$$ (right side of graph). But enjoys good performance at higher counts. Additionally, we can see that the estimator is more accurate for lower correlations across a wide range of $$N$$.
+As expected, the estimator's accuracy falls apart for low values of $N$ (right side of graph). But enjoys good performance at higher counts. Additionally, we can see that the estimator is more accurate for lower correlations across a wide range of $N$.
 
 ## Performance
 
