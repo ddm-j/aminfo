@@ -61,7 +61,7 @@ $$
 
 We can plot the difference between the estimator and the actual value for various correlations and number of datapoints, $N$.
 
-![Sample Image](img/sample_image.png)
+![Accuracy](img/accuracy.png)
 
 As expected, the estimator's accuracy falls apart for low values of $N$ (right side of graph). But enjoys good performance at higher counts. Additionally, we can see that the estimator is more accurate for lower correlations across a wide range of $N$.
 
